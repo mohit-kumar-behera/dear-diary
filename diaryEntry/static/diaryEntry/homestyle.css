@@ -1,0 +1,64 @@
+
+.jumbotron-fluid:first-child
+{
+	background:aquamarine;
+}
+.jumbotron-fluid:first-child h2
+{
+	color:white;
+	font-weight: bold;
+}
+
+a
+{
+	color:orange;
+}
+a:hover
+{
+	color:#c98104;
+	text-decoration:none;
+}
+
+.footer
+{
+	background:red;
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	color:white;
+	text-align:center;
+}
+
+.container-fluid
+{
+	background:aqua;
+	padding:20px;
+	color:grey;
+	font-weight: bold;
+}
+
+textarea
+{
+	width:100%;
+	height:210px;
+	padding:10px;
+	border-color:aquamarine;
+	outline:none;
+	border-radius:4px;
+	margin-bottom: 10px;
+}
+
+
+textarea::placeholder
+{
+	color:lightgreen;
+}
+
+.submitButton
+{
+	width:25%;
+	position:relative;
+	left:75%;
+}
+
