@@ -9,51 +9,37 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'diaryEntry/homestyle.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
 	<div class="jumbotron-fluid">
 		<div class="d-flex ml-5">
 			<h2 class="display-3">Diary</h2>
-		</div><!--dfelx-->
-	</div><!--jumbotron-->
+		</div>
+  </div>
 
   <div class="container border mt-5 mb-5">
     <div class="container pt-4 pb-4">
       
       <form method="post" action="{% url 'add' %}">
         <div class="d-flex flex-column">
-          <!--<textarea onfocus="textareaFocus(this)" onblur="textareaBlur(this)" placeholder="Write about your Entry..." spellcheck="false"></textarea>-->
           {% csrf_token %}
           {{ form.text }}
           <div class="d-flex flex-row">
             <button type="submit" class="btn btn-primary submitButton">Submit</button>
           </div>
-        </div><!--flex column-->
+        </div>
       </form>
   
-    </div><!--contaioner-->
-  </div><!--container-->
+    </div>
+  </div>
 
   <div class="container-fluid fixed-bottom">
     <div class="text-center">
       <span>&copy; 2020</span>
-    </div><!--text center-->
+    </div>
   </div>
-
-
-<script>
-  function textareaFocus(x)
-  {
-    x.style.boxShadow="0px 0px 10px powderblue";
-    x.style.border="1px solid powderblue"
-  }
-  function textareaBlur(y)
-  {
-    y.style.boxShadow="0px 0px 0px transparent"
-    y.style.border = "1px solid aquamarine"
-  }
-</script>
 
 </body>
 </html>

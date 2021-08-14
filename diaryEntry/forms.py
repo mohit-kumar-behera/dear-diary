@@ -7,4 +7,7 @@ class EntryForm(ModelForm):
 		fields = ('text', )
 	def __init__(self,*args,**kwargs):
 		super().__init__(*args,**kwargs)
-		self.fields['text'].widget.attrs.update({"placeholder":"Write about your Entry...","onfocus":"textareaFocus(this)","onblur":"textareaBlur(this)","spellcheck":"false"})
+		self.fields['text'].widget.attrs.update({
+			"placeholder": "Write about your Entry...",
+			"spellcheck": "false"
+		})
