@@ -1,45 +1,50 @@
 {% load static %}
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<title>Diary</title>
-<head>
-  <meta link-colorarset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<body>
-	<div class="jumbotron-fluid">
-		<div class="d-flex ml-5">
-			<h2 class="display-3">Diary</h2>
-		</div>
-  </div>
+  <title>Add to Diary</title>
+  <head>
+    <meta link-colorarset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-  <div class="container border mt-5 mb-5">
-    <div class="container pt-4 pb-4">
-      
-      <form method="post" action="{% url 'add' %}">
-        <div class="d-flex flex-column">
-          {% csrf_token %}
-          {{ form.text }}
-          <div class="d-flex flex-row">
-            <button type="submit" class="btn btn-primary submitButton">Submit</button>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+  </head>
+  <body>
+    <div class="jumbotron-fluid">
+      <div class="d-flex ml-5">
+        <h2 class="display-3">Add to Diary</h2>
+      </div>
+    </div>
+
+    <div class="container border mt-5 mb-5">
+      <div class="container pt-4 pb-4">
+        <form method="post" action="{% url 'add' %}">
+          <div class="d-flex flex-column">
+            {% csrf_token %} {{ form.text }}
+            <div class="d-flex flex-row">
+              <button type="submit" class="btn btn-primary submitButton">
+                Submit
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
-  
+        </form>
+      </div>
     </div>
-  </div>
 
-  <div class="container-fluid fixed-bottom">
-    <div class="text-center">
-      <span>&copy; 2020</span>
+    <div class="container-fluid fixed-bottom">
+      <div class="text-center">
+        <span>&copy; 2020</span>
+      </div>
     </div>
-  </div>
-
-</body>
+  </body>
 </html>
